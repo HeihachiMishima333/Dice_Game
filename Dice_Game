@@ -1,0 +1,39 @@
+
+  #include <stdio.h>
+
+  #include<math.h>
+//לנחש מה תטיל הקוביה
+#include <stido.h>
+#include <stdlib.h>
+
+  #include<time.h>
+
+  void main() {
+    int a, b, i;
+    printf("You have 3 attempts to guess which number the rolled dice will give you from 1 to 6\n");
+
+    srand(time(NULL));
+    for (i = 1; i <= 3; i++) {
+      scanf("%d", & a);
+
+      b = rand() % 6 + 1;
+      if (a == b) {
+        printf("Corect!The random number is %d\n", b);
+        break;
+      } else if (i <= 2)
+        printf("Wrong!The random number is %d Try again\n", b);
+      else
+        printf("Wrong!The random number is %d \n", b);
+
+    }
+    if (i == 1)
+      printf("Congratulations!, you have guessed correctly at your first attempt.");
+    else if (i == 2)
+      printf("Congratulations!, you have guessed correctly at your second attempt.");
+    else if (i == 3)
+      printf("Congratulations, you have guessed correctly at your last attempt");
+    else
+
+      printf("Your 3 attempts have failed");
+
+  }
